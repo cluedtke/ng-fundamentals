@@ -10,6 +10,7 @@ import {
   EventsListResolver,
   CreateSessionComponent,
   SessionListComponent,
+  DurationPipe,
 } from './events/index'
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
@@ -39,6 +40,7 @@ import { CollapsibleWell } from './common/collapsible-well.component';
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWell,
+    DurationPipe,
   ],
   providers: [
     EventService,
