@@ -19,7 +19,7 @@ export class SessionListComponent implements OnChanges {
         private voterService: VoterService,
     ) { }
 
-    ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
+    ngOnChanges(): void {
         if (this.sessions) {
             this.filterSessions(this.filterBy);
             this.sortBy === 'name'
