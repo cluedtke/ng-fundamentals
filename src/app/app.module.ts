@@ -15,7 +15,7 @@ import {
   VoterService,
   LocationValidator,
   EventResolver,
-} from './events/index'
+} from './events/index';
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import {
@@ -32,8 +32,8 @@ import { Error404Component } from './common/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-let toastr: Toastr = window['toastr'];
-let jQuery = window['$']; 
+const toastr: Toastr = window['toastr'];
+const jQuery = window['$'];
 
 @NgModule({
   imports: [
@@ -75,7 +75,8 @@ let jQuery = window['$'];
 export class AppModule { }
 
 export function checkDirtyState(component: CreateEventComponent) {
-  if (component.isDirty)
-    return window.confirm('You can not saved this event, do you really want to cancel?')
-  return true
+  if (component.isDirty) {
+    return window.confirm('You can not saved this event, do you really want to cancel?');
+  }
+  return true;
 }

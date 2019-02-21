@@ -1,7 +1,7 @@
-import { Component, Input, OnChanges } from "@angular/core";
-import { ISession } from "../shared";
-import { AuthService } from "src/app/user/auth.service";
-import { VoterService } from "./voter.service";
+import { Component, Input, OnChanges } from '@angular/core';
+import { ISession } from '../shared';
+import { AuthService } from 'src/app/user/auth.service';
+import { VoterService } from './voter.service';
 
 @Component({
     selector: 'session-list',
@@ -24,7 +24,7 @@ export class SessionListComponent implements OnChanges {
             this.filterSessions(this.filterBy);
             this.sortBy === 'name'
                 ? this.visibleSessions.sort(sortByNameAsc)
-                : this.visibleSessions.sort(sortByVotesAsc)
+                : this.visibleSessions.sort(sortByVotesAsc);
         }
     }
 
@@ -54,8 +54,8 @@ export class SessionListComponent implements OnChanges {
 }
 
 function sortByNameAsc(s1: ISession, s2: ISession) {
-    if (s1.name > s2.name) return 1;
-    if (s1.name === s2.name) return 0;
+    if (s1.name > s2.name) { return 1; }
+    if (s1.name === s2.name) { return 0; }
     return -1;
 }
 

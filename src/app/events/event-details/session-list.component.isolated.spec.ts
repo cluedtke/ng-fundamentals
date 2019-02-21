@@ -1,9 +1,10 @@
-import { SessionListComponent } from "./session-list.component";
-import { ISession } from "../shared";
+import { SessionListComponent } from './session-list.component';
+import { ISession } from '../shared';
 
 describe('SessionListComponent', () => {
   let component: SessionListComponent;
-  let mockAuthService, mockVoterService;
+  let mockAuthService: any,
+    mockVoterService: any;
 
   beforeEach(() => {
     component = new SessionListComponent(mockAuthService, mockVoterService);
@@ -24,7 +25,7 @@ describe('SessionListComponent', () => {
 
       expect(component.visibleSessions.length).toBe(2);
     });
-    
+
     it('should sort the sessions correctly', () => {
       component.sessions = <ISession[]>[
         {name: 'session 1', level: 'intermediate'},

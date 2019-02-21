@@ -1,21 +1,21 @@
-import { Injectable } from "@angular/core";
-import { IUser } from "./user.model";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { tap, catchError } from "rxjs/operators";
-import { of } from "rxjs";
+import { Injectable } from '@angular/core';
+import { IUser } from './user.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { tap, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable()
 export class AuthService {
-    currentUser: IUser
+    currentUser: IUser;
 
     constructor(
         private http: HttpClient,
     ) { }
-    
+
     loginUser(userName: string, password: string) {
-        let loginInfo = { username: userName, password: password };
-        let options = { headers: new HttpHeaders({ 'content-type': 'application/json'}) };
-        
+        const loginInfo = { username: userName, password: password };
+        const options = { headers: new HttpHeaders({ 'content-type': 'application/json'}) };
+
         return this.http.post('/api/login', loginInfo, options)
             .pipe(tap(data => {
                 this.currentUser = <IUser>data['user'];
@@ -38,15 +38,15 @@ export class AuthService {
     }
 
     updateCurrentUser(firstName: string, lastName: string) {
-        this.currentUser.firstName = firstName
-        this.currentUser.lastName = lastName
+        this.currentUser.firstName = firstName;
+        this.currentUser.lastName = lastName;
 
-        let options = { headers: new HttpHeaders({ 'content-type': 'application/json'}) };
+        const options = { headers: new HttpHeaders({ 'content-type': 'application/json'}) };
         return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options);
     }
 
     logout() {
-        let options = { headers: new HttpHeaders({ 'content-type': 'application/json'}) };
+        const options = { headers: new HttpHeaders({ 'content-type': 'application/json'}) };
         return this.http.post('/api/logout', {}, options);
     }
 }

@@ -1,6 +1,6 @@
-import { Component, Input, ViewChild, ElementRef, Inject } from "@angular/core";
-import { $ } from "protractor";
-import { JQ_TOKEN } from "./jQuery.service";
+import { Component, Input, ViewChild, ElementRef, Inject } from '@angular/core';
+import { $ } from 'protractor';
+import { JQ_TOKEN } from './jQuery.service';
 
 @Component({
     selector: 'simple-modal',

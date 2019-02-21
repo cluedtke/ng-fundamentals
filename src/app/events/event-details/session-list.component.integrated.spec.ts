@@ -13,13 +13,13 @@ describe('SessionListComponent', () => {
         component: SessionListComponent,
         element: HTMLElement,
         debugEl: DebugElement;
-    
+
     beforeEach(async(() => {
-        let mockAuthService = {
+        const mockAuthService = {
             isAuthenticated: () => true,
             currentUser: {userName: ''}
         };
-        let mockVoterService = {
+        const mockVoterService = {
             userHasVoted: () => true
         };
 
@@ -33,7 +33,7 @@ describe('SessionListComponent', () => {
             ],
             providers: [
                 { provide: AuthService, useValue: mockAuthService },
-                { provide: VoterService, useValue: mockVoterService }  
+                { provide: VoterService, useValue: mockVoterService }
             ],
             schemas: [
                 // NO_ERRORS_SCHEMA, //can then remove UpvoteComponent and CollapsibleWell declarations

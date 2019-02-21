@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
-import { ISession } from "../shared";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { catchError } from "rxjs/operators";
-import { Observable, of } from "rxjs";
+import { Injectable } from '@angular/core';
+import { ISession } from '../shared';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class VoterService {
     constructor(
         private http: HttpClient,
     ) { }
-    
+
     deleteVoter(eventId: number, session: ISession, voterName: string) {
         session.voters = session.voters.filter(voter => voter !== voterName);
 
@@ -37,6 +37,6 @@ export class VoterService {
         return (error: any): Observable<T> => {
           console.error(error);
           return of(result as T);
-        }
+        };
       }
 }
